@@ -1,5 +1,7 @@
 ﻿Imports MySqlConnector
 
+Imports System.Data
+
 Public Class UsuarioDAO
 
     Public Shared Function ObtenerPorNombre(nombreUsuario As String) As Usuario
@@ -145,6 +147,396 @@ Public Class UsuarioDAO
                 comando.ExecuteNonQuery()
 
             End Using
+        End Using
+
+    End Sub
+    Public Shared Function ObtenerTodos() As DataTable
+
+        Dim tabla As New DataTable()
+
+        Dim sql As String =
+            "SELECT
+            u.id_usuario,
+            u.nombre_usuario,
+            r.nombre AS rol,
+            u.intentos_fallidos,
+            u.activo,
+            u.ultimo_acceso
+         FROM usuarios u
+         INNER JOIN roles r
+            ON r.id_rol = u.id_rol
+         ORDER BY u.nombre_usuario"
+
+        Using conexion As MySqlConnection = ConexionBD.ObtenerConexion()
+
+            Using comando As New MySqlCommand(sql, conexion)
+
+                Using adaptador As New MySqlDataAdapter(comando)
+
+                    adaptador.Fill(tabla)
+
+                End Using
+
+            End Using
+
+        End Using
+
+        Return tabla
+
+    End Function
+    Public Shared Sub Crear(
+    nombreUsuario As String,
+    contrasena As String,
+    idRol As Integer
+)
+
+        Dim sal As String =
+            Seguridad.GenerarSal()
+
+        Dim hash As String =
+            Seguridad.CalcularHash(
+                contrasena,
+                sal
+            )
+
+        Dim sql As String =
+            "INSERT INTO usuarios
+        (
+            nombre_usuario,
+            contrasena_hash,
+            sal,
+            id_rol,
+            intentos_fallidos,
+            activo
+        )
+        VALUES
+        (
+            @usuario,
+            @hash,
+            @sal,
+            @rol,
+            0,
+            1
+        )"
+
+        Using conexion As MySqlConnection =
+            ConexionBD.ObtenerConexion()
+
+            Using comando As New MySqlCommand(
+                sql,
+                conexion
+            )
+
+                comando.Parameters.AddWithValue(
+                    "@usuario",
+                    nombreUsuario
+                )
+
+                comando.Parameters.AddWithValue(
+                    "@hash",
+                    hash
+                )
+
+                comando.Parameters.AddWithValue(
+                    "@sal",
+                    sal
+                )
+
+                comando.Parameters.AddWithValue(
+                    "@rol",
+                    idRol
+                )
+
+                conexion.Open()
+
+                comando.ExecuteNonQuery()
+
+            End Using
+
+        End Using
+
+
+    End Sub
+    Public Shared Sub Actualizar(
+    idUsuario As Integer,
+    nombreUsuario As String,
+    idRol As Integer,
+    activo As Boolean
+)
+
+        Dim sql As String =
+            "UPDATE usuarios
+         SET nombre_usuario = @usuario,
+             id_rol = @rol,
+             activo = @activo
+         WHERE id_usuario = @id"
+
+        Using conexion As MySqlConnection =
+            ConexionBD.ObtenerConexion()
+
+            Using comando As New MySqlCommand(
+                sql,
+                conexion
+            )
+
+                comando.Parameters.AddWithValue(
+                    "@usuario",
+                    nombreUsuario
+                )
+
+                comando.Parameters.AddWithValue(
+                    "@rol",
+                    idRol
+                )
+
+                comando.Parameters.AddWithValue(
+                    "@activo",
+                    activo
+                )
+
+                comando.Parameters.AddWithValue(
+                    "@id",
+                    idUsuario
+                )
+
+                conexion.Open()
+
+                comando.ExecuteNonQuery()
+
+            End Using
+
+        End Using
+
+    End Sub
+    Public Shared Sub RestablecerContrasena(
+    idUsuario As Integer,
+    nuevaContrasena As String
+)
+
+        Dim sal As String =
+            Seguridad.GenerarSal()
+
+        Dim hash As String =
+            Seguridad.CalcularHash(
+                nuevaContrasena,
+                sal
+            )
+
+        Dim sql As String =
+            "UPDATE usuarios
+         SET contrasena_hash = @hash,
+             sal = @sal,
+             intentos_fallidos = 0,
+             activo = 1
+         WHERE id_usuario = @id"
+
+        Using conexion As MySqlConnection =
+            ConexionBD.ObtenerConexion()
+
+            Using comando As New MySqlCommand(
+                sql,
+                conexion
+            )
+
+                comando.Parameters.AddWithValue(
+                    "@hash",
+                    hash
+                )
+
+                comando.Parameters.AddWithValue(
+                    "@sal",
+                    sal
+                )
+
+                comando.Parameters.AddWithValue(
+                    "@id",
+                    idUsuario
+                )
+
+                conexion.Open()
+
+                comando.ExecuteNonQuery()
+
+            End Using
+
+        End Using
+
+    End Sub
+    Public Shared Function ObtenerPorId(
+    idUsuario As Integer
+) As Usuario
+
+        Dim sql As String =
+            "SELECT
+            u.id_usuario,
+            u.nombre_usuario,
+            u.contrasena_hash,
+            u.sal,
+            u.id_rol,
+            r.nombre AS rol,
+            u.id_socio,
+            u.id_instructor,
+            u.intentos_fallidos,
+            u.activo,
+            u.ultimo_acceso
+         FROM usuarios u
+         INNER JOIN roles r
+            ON r.id_rol = u.id_rol
+         WHERE u.id_usuario = @id"
+
+        Using conexion As MySqlConnection =
+            ConexionBD.ObtenerConexion()
+
+            Using comando As New MySqlCommand(
+                sql,
+                conexion
+            )
+
+                comando.Parameters.AddWithValue(
+                    "@id",
+                    idUsuario
+                )
+
+                conexion.Open()
+
+                Using lector As MySqlDataReader =
+                    comando.ExecuteReader()
+
+                    If Not lector.Read() Then
+                        Return Nothing
+                    End If
+
+                    Dim usuario As New Usuario()
+
+                    usuario.IdUsuario =
+                        Convert.ToInt32(
+                            lector("id_usuario")
+                        )
+
+                    usuario.NombreUsuario =
+                        lector("nombre_usuario").ToString()
+
+                    usuario.ContrasenaHash =
+                        lector("contrasena_hash").ToString()
+
+                    usuario.Sal =
+                        lector("sal").ToString()
+
+                    usuario.IdRol =
+                        Convert.ToInt32(
+                            lector("id_rol")
+                        )
+
+                    usuario.Rol =
+                        lector("rol").ToString()
+
+                    usuario.IntentosFallidos =
+                        Convert.ToInt32(
+                            lector("intentos_fallidos")
+                        )
+
+                    usuario.Activo =
+                        Convert.ToBoolean(
+                            lector("activo")
+                        )
+
+                    If IsDBNull(lector("id_socio")) Then
+
+                        usuario.IdSocio = Nothing
+
+                    Else
+
+                        usuario.IdSocio =
+                            Convert.ToInt32(
+                                lector("id_socio")
+                            )
+
+                    End If
+
+                    If IsDBNull(lector("id_instructor")) Then
+
+                        usuario.IdInstructor = Nothing
+
+                    Else
+
+                        usuario.IdInstructor =
+                            Convert.ToInt32(
+                                lector("id_instructor")
+                            )
+
+                    End If
+
+                    If IsDBNull(lector("ultimo_acceso")) Then
+
+                        usuario.UltimoAcceso = Nothing
+
+                    Else
+
+                        usuario.UltimoAcceso =
+                            Convert.ToDateTime(
+                                lector("ultimo_acceso")
+                            )
+
+                    End If
+
+                    Return usuario
+
+                End Using
+
+            End Using
+
+        End Using
+
+    End Function
+    Public Shared Sub CambiarContrasena(
+    idUsuario As Integer,
+    nuevaContrasena As String
+)
+
+        Dim sal As String =
+            Seguridad.GenerarSal()
+
+        Dim hash As String =
+            Seguridad.CalcularHash(
+                nuevaContrasena,
+                sal
+            )
+
+        Dim sql As String =
+            "UPDATE usuarios
+         SET contrasena_hash = @hash,
+             sal = @sal
+         WHERE id_usuario = @id"
+
+        Using conexion As MySqlConnection =
+            ConexionBD.ObtenerConexion()
+
+            Using comando As New MySqlCommand(
+                sql,
+                conexion
+            )
+
+                comando.Parameters.AddWithValue(
+                    "@hash",
+                    hash
+                )
+
+                comando.Parameters.AddWithValue(
+                    "@sal",
+                    sal
+                )
+
+                comando.Parameters.AddWithValue(
+                    "@id",
+                    idUsuario
+                )
+
+                conexion.Open()
+
+                comando.ExecuteNonQuery()
+
+            End Using
+
         End Using
 
     End Sub

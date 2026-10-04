@@ -33,6 +33,8 @@ Partial Class frmlogin
         btnSalir = New Button()
         LblTitulo = New Label()
         lblSubtitulo = New Label()
+        btnUsuarios = New Button()
+        btnBitacora = New Button()
         SuspendLayout()
         ' 
         ' txtUsuario
@@ -41,11 +43,12 @@ Partial Class frmlogin
         txtUsuario.Name = "txtUsuario"
         txtUsuario.Size = New Size(100, 23)
         txtUsuario.TabIndex = 1
+        txtUsuario.Text = "m"
         txtUsuario.UseSystemPasswordChar = True
         ' 
         ' txtcontrasena
         ' 
-        txtcontrasena.Location = New Point(213, 238)
+        txtcontrasena.Location = New Point(213, 245)
         txtcontrasena.Name = "txtcontrasena"
         txtcontrasena.Size = New Size(100, 23)
         txtcontrasena.TabIndex = 2
@@ -76,7 +79,7 @@ Partial Class frmlogin
         lblContrasena.AutoSize = True
         lblContrasena.BorderStyle = BorderStyle.FixedSingle
         lblContrasena.Font = New Font("Segoe UI", 10.5F)
-        lblContrasena.Location = New Point(213, 192)
+        lblContrasena.Location = New Point(213, 194)
         lblContrasena.Name = "lblContrasena"
         lblContrasena.Size = New Size(81, 21)
         lblContrasena.TabIndex = 5
@@ -142,12 +145,32 @@ Partial Class frmlogin
         lblSubtitulo.Text = "Gimnasio Titan . Sistema de gestion"
         lblSubtitulo.TextAlign = ContentAlignment.TopCenter
         ' 
+        ' btnUsuarios
+        ' 
+        btnUsuarios.Location = New Point(453, 340)
+        btnUsuarios.Name = "btnUsuarios"
+        btnUsuarios.Size = New Size(101, 23)
+        btnUsuarios.TabIndex = 12
+        btnUsuarios.Text = "Probar Usuarios"
+        btnUsuarios.UseVisualStyleBackColor = True
+        ' 
+        ' btnBitacora
+        ' 
+        btnBitacora.Location = New Point(453, 309)
+        btnBitacora.Name = "btnBitacora"
+        btnBitacora.Size = New Size(102, 23)
+        btnBitacora.TabIndex = 13
+        btnBitacora.Text = "Probar Bitacoras"
+        btnBitacora.UseVisualStyleBackColor = True
+        ' 
         ' frmLogin
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.Control
         ClientSize = New Size(586, 450)
+        Controls.Add(btnBitacora)
+        Controls.Add(btnUsuarios)
         Controls.Add(lblSubtitulo)
         Controls.Add(LblTitulo)
         Controls.Add(btnSalir)
@@ -164,7 +187,7 @@ Partial Class frmlogin
         MinimizeBox = False
         Name = "frmLogin"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Gym Control"
+        Text = "frmLogin"
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -179,4 +202,6 @@ Partial Class frmlogin
     Friend WithEvents btnSalir As Button
     Friend WithEvents LblTitulo As Label
     Friend WithEvents lblSubtitulo As Label
+    Friend WithEvents btnUsuarios As Button
+    Friend WithEvents btnBitacora As Button
 End Class

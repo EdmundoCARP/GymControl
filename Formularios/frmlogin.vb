@@ -251,5 +251,24 @@
         Application.Exit()
 
     End Sub
+    Private Sub btnUsuarios_Click(
+    sender As Object,
+    e As EventArgs
+) Handles btnUsuarios.Click
 
+        Dim formulario As New frmUsuarios()
+
+        formulario.ShowDialog()
+
+    End Sub
+    Private Sub btnBitacora_Click(
+    sender As Object,
+    e As EventArgs
+) Handles btnBitacora.Click
+
+        Dim formulario As New frmBitacoras()
+
+        formulario.ShowDialog()
+
+    End Sub
 End Class
