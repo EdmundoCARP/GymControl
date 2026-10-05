@@ -271,4 +271,15 @@
         formulario.ShowDialog()
 
     End Sub
+
+    Private Sub btnCambiarContrasena_Click(
+    sender As Object,
+    e As EventArgs
+) Handles btnCambiarContrasena.Click
+
+        Dim formulario As New frmCambiarContrasena()
+
+        formulario.ShowDialog()
+
+    End Sub
 End Class
