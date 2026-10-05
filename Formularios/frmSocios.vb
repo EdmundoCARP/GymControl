@@ -92,4 +92,35 @@
         dgvSocios.DataSource = bsSocios
 
     End Sub
+    Private Function ValidarDatos() As Boolean
+
+        errSocios.Clear()
+
+        Dim valido As Boolean = True
+
+        If String.IsNullOrWhiteSpace(txtNombre.Text) Then
+            errSocios.SetError(txtNombre, "El nombre es obligatorio.")
+            valido = False
+        End If
+
+        If String.IsNullOrWhiteSpace(txtApellido.Text) Then
+            errSocios.SetError(txtApellido, "El apellido es obligatorio.")
+            valido = False
+        End If
+
+        If String.IsNullOrWhiteSpace(txtCedula.Text) Then
+            errSocios.SetError(txtCedula, "La cédula es obligatoria.")
+            valido = False
+        End If
+
+        If Not valido Then
+            MessageBox.Show("Complete los campos obligatorios.",
+                            "Validación",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning)
+        End If
+
+        Return valido
+
+    End Function
 End Class

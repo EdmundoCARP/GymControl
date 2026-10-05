@@ -22,6 +22,7 @@ Partial Class frmSocios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As DataGridViewCellStyle = New DataGridViewCellStyle()
@@ -45,9 +46,9 @@ Partial Class frmSocios
         lblGenero = New Label()
         lblFechaNacimiento = New Label()
         dtpFechaNacimiento = New DateTimePicker()
-        txtApellidos = New TextBox()
+        txtApellido = New TextBox()
         lblApellidos = New Label()
-        txtNombres = New TextBox()
+        txtNombre = New TextBox()
         lblNombres = New Label()
         txtCedula = New TextBox()
         lblCedula = New Label()
@@ -60,9 +61,11 @@ Partial Class frmSocios
         chkTieneCuenta = New CheckBox()
         stsEstado = New StatusStrip()
         dgvSocios = New DataGridView()
+        errSocios = New ErrorProvider(components)
         grpDatos.SuspendLayout()
         grpCuenta.SuspendLayout()
         CType(dgvSocios, ComponentModel.ISupportInitialize).BeginInit()
+        CType(errSocios, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' btnNuevo
@@ -153,9 +156,9 @@ Partial Class frmSocios
         grpDatos.Controls.Add(lblGenero)
         grpDatos.Controls.Add(lblFechaNacimiento)
         grpDatos.Controls.Add(dtpFechaNacimiento)
-        grpDatos.Controls.Add(txtApellidos)
+        grpDatos.Controls.Add(txtApellido)
         grpDatos.Controls.Add(lblApellidos)
-        grpDatos.Controls.Add(txtNombres)
+        grpDatos.Controls.Add(txtNombre)
         grpDatos.Controls.Add(lblNombres)
         grpDatos.Controls.Add(txtCedula)
         grpDatos.Controls.Add(lblCedula)
@@ -268,12 +271,12 @@ Partial Class frmSocios
         dtpFechaNacimiento.Size = New Size(113, 23)
         dtpFechaNacimiento.TabIndex = 12
         ' 
-        ' txtApellidos
+        ' txtApellido
         ' 
-        txtApellidos.Location = New Point(148, 128)
-        txtApellidos.Name = "txtApellidos"
-        txtApellidos.Size = New Size(213, 23)
-        txtApellidos.TabIndex = 5
+        txtApellido.Location = New Point(148, 128)
+        txtApellido.Name = "txtApellido"
+        txtApellido.Size = New Size(213, 23)
+        txtApellido.TabIndex = 5
         ' 
         ' lblApellidos
         ' 
@@ -285,12 +288,12 @@ Partial Class frmSocios
         lblApellidos.TabIndex = 4
         lblApellidos.Text = "Apellidos *"
         ' 
-        ' txtNombres
+        ' txtNombre
         ' 
-        txtNombres.Location = New Point(148, 79)
-        txtNombres.Name = "txtNombres"
-        txtNombres.Size = New Size(213, 23)
-        txtNombres.TabIndex = 3
+        txtNombre.Location = New Point(148, 79)
+        txtNombre.Name = "txtNombre"
+        txtNombre.Size = New Size(213, 23)
+        txtNombre.TabIndex = 3
         ' 
         ' lblNombres
         ' 
@@ -436,6 +439,10 @@ Partial Class frmSocios
         dgvSocios.Size = New Size(584, 537)
         dgvSocios.TabIndex = 14
         ' 
+        ' errSocios
+        ' 
+        errSocios.ContainerControl = Me
+        ' 
         ' frmSocios
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -462,6 +469,7 @@ Partial Class frmSocios
         grpCuenta.ResumeLayout(False)
         grpCuenta.PerformLayout()
         CType(dgvSocios, ComponentModel.ISupportInitialize).EndInit()
+        CType(errSocios, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -479,9 +487,9 @@ Partial Class frmSocios
     Friend WithEvents lblCedula As Label
     Friend WithEvents lblNombres As Label
     Friend WithEvents txtCedula As TextBox
-    Friend WithEvents txtNombres As TextBox
+    Friend WithEvents txtNombre As TextBox
     Friend WithEvents dtpFechaNacimiento As DateTimePicker
-    Friend WithEvents txtApellidos As TextBox
+    Friend WithEvents txtApellido As TextBox
     Friend WithEvents lblApellidos As Label
     Friend WithEvents txtTelefono As TextBox
     Friend WithEvents lblTelefono As Label
@@ -501,4 +509,5 @@ Partial Class frmSocios
     Friend WithEvents btnVerMembresias As Button
     Friend WithEvents stsEstado As StatusStrip
     Friend WithEvents dgvSocios As DataGridView
+    Friend WithEvents errSocios As ErrorProvider
 End Class
