@@ -35,6 +35,7 @@ Partial Class frmlogin
         lblSubtitulo = New Label()
         btnUsuarios = New Button()
         btnBitacora = New Button()
+        btnCambiarContrasena = New Button()
         SuspendLayout()
         ' 
         ' txtUsuario
@@ -163,12 +164,22 @@ Partial Class frmlogin
         btnBitacora.Text = "Probar Bitacoras"
         btnBitacora.UseVisualStyleBackColor = True
         ' 
+        ' btnCambiarContrasena
+        ' 
+        btnCambiarContrasena.Location = New Point(430, 275)
+        btnCambiarContrasena.Name = "btnCambiarContrasena"
+        btnCambiarContrasena.Size = New Size(127, 23)
+        btnCambiarContrasena.TabIndex = 14
+        btnCambiarContrasena.Text = "Cambiar Contrasena"
+        btnCambiarContrasena.UseVisualStyleBackColor = True
+        ' 
         ' frmLogin
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.Control
         ClientSize = New Size(586, 450)
+        Controls.Add(btnCambiarContrasena)
         Controls.Add(btnBitacora)
         Controls.Add(btnUsuarios)
         Controls.Add(lblSubtitulo)
@@ -204,4 +215,5 @@ Partial Class frmlogin
     Friend WithEvents lblSubtitulo As Label
     Friend WithEvents btnUsuarios As Button
     Friend WithEvents btnBitacora As Button
+    Friend WithEvents btnCambiarContrasena As Button
 End Class
