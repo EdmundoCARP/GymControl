@@ -282,6 +282,7 @@
         formulario.ShowDialog()
 
     End Sub
+
     Private Sub btnTiposMembresia_Click(
     sender As Object,
     e As EventArgs

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmPrincipal
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmPrincipal
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         mnuPrincipal = New MenuStrip()
         ArchivoToolStripMenuItem = New ToolStripMenuItem()
@@ -34,12 +34,12 @@ Partial Class frmPrincipal
         AyudaToolStripMenuItem = New ToolStripMenuItem()
         pnlNavegacion = New Panel()
         btnCerrarsesion = New Button()
-        btnBitacoradeaccesos = New Button()
-        btnUsuarioyroles = New Button()
+        btnBitacoras = New Button()
+        btnUsuarios = New Button()
         btnHorarios = New Button()
-        btnActvySalas = New Button()
+        btnActividades = New Button()
         btnInstructores = New Button()
-        btnPagos = New Button()
+        btnMembresiasPagos = New Button()
         btnMembresias = New Button()
         btnSocios = New Button()
         btnInicio = New Button()
@@ -150,12 +150,12 @@ Partial Class frmPrincipal
         ' 
         pnlNavegacion.BackColor = Color.Red
         pnlNavegacion.Controls.Add(btnCerrarsesion)
-        pnlNavegacion.Controls.Add(btnBitacoradeaccesos)
-        pnlNavegacion.Controls.Add(btnUsuarioyroles)
+        pnlNavegacion.Controls.Add(btnBitacoras)
+        pnlNavegacion.Controls.Add(btnUsuarios)
         pnlNavegacion.Controls.Add(btnHorarios)
-        pnlNavegacion.Controls.Add(btnActvySalas)
+        pnlNavegacion.Controls.Add(btnActividades)
         pnlNavegacion.Controls.Add(btnInstructores)
-        pnlNavegacion.Controls.Add(btnPagos)
+        pnlNavegacion.Controls.Add(btnMembresiasPagos)
         pnlNavegacion.Controls.Add(btnMembresias)
         pnlNavegacion.Controls.Add(btnSocios)
         pnlNavegacion.Controls.Add(btnInicio)
@@ -174,23 +174,23 @@ Partial Class frmPrincipal
         btnCerrarsesion.Text = "Cerrar sesion"
         btnCerrarsesion.UseVisualStyleBackColor = False
         ' 
-        ' btnBitacoradeaccesos
+        ' btnBitacoras
         ' 
-        btnBitacoradeaccesos.Location = New Point(17, 402)
-        btnBitacoradeaccesos.Name = "btnBitacoradeaccesos"
-        btnBitacoradeaccesos.Size = New Size(115, 50)
-        btnBitacoradeaccesos.TabIndex = 8
-        btnBitacoradeaccesos.Text = "Bitacora de accesos"
-        btnBitacoradeaccesos.UseVisualStyleBackColor = True
+        btnBitacoras.Location = New Point(17, 402)
+        btnBitacoras.Name = "btnBitacoras"
+        btnBitacoras.Size = New Size(115, 50)
+        btnBitacoras.TabIndex = 8
+        btnBitacoras.Text = "Bitacora de accesos"
+        btnBitacoras.UseVisualStyleBackColor = True
         ' 
-        ' btnUsuarioyroles
+        ' btnUsuarios
         ' 
-        btnUsuarioyroles.Location = New Point(17, 334)
-        btnUsuarioyroles.Name = "btnUsuarioyroles"
-        btnUsuarioyroles.Size = New Size(115, 46)
-        btnUsuarioyroles.TabIndex = 7
-        btnUsuarioyroles.Text = "Usuarios y roles "
-        btnUsuarioyroles.UseVisualStyleBackColor = True
+        btnUsuarios.Location = New Point(17, 334)
+        btnUsuarios.Name = "btnUsuarios"
+        btnUsuarios.Size = New Size(115, 46)
+        btnUsuarios.TabIndex = 7
+        btnUsuarios.Text = "Usuarios y roles "
+        btnUsuarios.UseVisualStyleBackColor = True
         ' 
         ' btnHorarios
         ' 
@@ -201,14 +201,14 @@ Partial Class frmPrincipal
         btnHorarios.Text = "Horarios"
         btnHorarios.UseVisualStyleBackColor = True
         ' 
-        ' btnActvySalas
+        ' btnActividades
         ' 
-        btnActvySalas.Location = New Point(17, 248)
-        btnActvySalas.Name = "btnActvySalas"
-        btnActvySalas.Size = New Size(115, 23)
-        btnActvySalas.TabIndex = 5
-        btnActvySalas.Text = "Actividades y salas"
-        btnActvySalas.UseVisualStyleBackColor = True
+        btnActividades.Location = New Point(17, 248)
+        btnActividades.Name = "btnActividades"
+        btnActividades.Size = New Size(115, 23)
+        btnActividades.TabIndex = 5
+        btnActividades.Text = "Actividades y salas"
+        btnActividades.UseVisualStyleBackColor = True
         ' 
         ' btnInstructores
         ' 
@@ -219,14 +219,14 @@ Partial Class frmPrincipal
         btnInstructores.Text = "Instructores"
         btnInstructores.UseVisualStyleBackColor = True
         ' 
-        ' btnPagos
+        ' btnMembresiasPagos
         ' 
-        btnPagos.Location = New Point(17, 150)
-        btnPagos.Name = "btnPagos"
-        btnPagos.Size = New Size(115, 23)
-        btnPagos.TabIndex = 3
-        btnPagos.Text = "Pagos"
-        btnPagos.UseVisualStyleBackColor = True
+        btnMembresiasPagos.Location = New Point(17, 150)
+        btnMembresiasPagos.Name = "btnMembresiasPagos"
+        btnMembresiasPagos.Size = New Size(115, 23)
+        btnMembresiasPagos.TabIndex = 3
+        btnMembresiasPagos.Text = "Pagos"
+        btnMembresiasPagos.UseVisualStyleBackColor = True
         ' 
         ' btnMembresias
         ' 
@@ -405,7 +405,7 @@ Partial Class frmPrincipal
         ' 
         ' lblTitulo
         ' 
-        lblTitulo.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTitulo.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblTitulo.Location = New Point(3, 9)
         lblTitulo.Name = "lblTitulo"
         lblTitulo.Size = New Size(212, 35)
@@ -547,7 +547,7 @@ Partial Class frmPrincipal
         ' 
         ' frmPrincipal
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(935, 574)
         Controls.Add(sstSesion)
@@ -588,12 +588,12 @@ Partial Class frmPrincipal
     Friend WithEvents mnuPrincipal As MenuStrip
     Friend WithEvents pnlNavegacion As Panel
     Friend WithEvents btnCerrarsesion As Button
-    Friend WithEvents btnBitacoradeaccesos As Button
-    Friend WithEvents btnUsuarioyroles As Button
+    Friend WithEvents btnBitacoras As Button
+    Friend WithEvents btnUsuarios As Button
     Friend WithEvents btnHorarios As Button
-    Friend WithEvents btnActvySalas As Button
+    Friend WithEvents btnActividades As Button
     Friend WithEvents btnInstructores As Button
-    Friend WithEvents btnPagos As Button
+    Friend WithEvents btnMembresiasPagos As Button
     Friend WithEvents btnMembresias As Button
     Friend WithEvents btnSocios As Button
     Friend WithEvents btnInicio As Button
@@ -635,4 +635,104 @@ Partial Class frmPrincipal
     Friend WithEvents btnRenovarMembresia As Button
     Friend WithEvents btnVerHorarios As Button
     Friend WithEvents sstSesion As StatusStrip
+    Private Sub btnHorarios_Click(
+    sender As Object,
+    e As EventArgs
+) Handles btnHorarios.Click
+
+        Dim formulario As New frmHorarios()
+
+        formulario.ShowDialog()
+
+    End Sub
+    Private Sub btnSocios_Click(
+    sender As Object,
+    e As EventArgs
+) Handles btnSocios.Click
+
+        Dim formulario As New frmSocios()
+
+        formulario.ShowDialog()
+
+    End Sub
+    Private Sub btnInstructor_Click(
+    sender As Object,
+    e As EventArgs
+) Handles btnInstructores.Click
+
+        Dim formulario As New frmInstructores()
+
+        formulario.ShowDialog()
+
+    End Sub
+    Private Sub btnActividadesSalas_Click(sender As Object, e As EventArgs) Handles btnActividades.Click
+        Dim formulario As New frmActividades()
+        formulario.ShowDialog()
+    End Sub
+    Private Sub btnTiposMembresia_Click(
+    sender As Object,
+    e As EventArgs
+) Handles btnMembresias.Click
+
+        Dim formulario As New frmTiposMembresia()
+
+        formulario.ShowDialog()
+
+    End Sub
+    Private Sub btnUsuarios_Click(
+    sender As Object,
+    e As EventArgs
+) Handles btnUsuarios.Click
+
+        Dim formulario As New frmUsuarios()
+
+        formulario.ShowDialog()
+
+    End Sub
+    Private Sub btnBitacora_Click(
+    sender As Object,
+    e As EventArgs
+) Handles btnBitacoras.Click
+
+        Dim formulario As New frmBitacoras()
+
+        formulario.ShowDialog()
+
+    End Sub
+    Private Sub btnCerrarSesion_Click(
+    sender As Object,
+    e As EventArgs
+) Handles btnCerrarsesion.Click
+
+        If MessageBox.Show(
+            "¿Desea cerrar la sesión?",
+            "GymControl",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+        ) <> DialogResult.Yes Then
+
+            Return
+
+        End If
+
+        Sesion.CerrarSesion()
+
+        Me.Close()
+
+    End Sub
+    Private Sub btnNuevoSocio_Click(sender As Object, e As EventArgs) Handles btnNuevoSocio.Click
+
+        Dim formulario As New frmSocios()
+        formulario.ShowDialog()
+
+    End Sub
+    Private Sub btnVerHorarios_Click(sender As Object, e As EventArgs) Handles btnVerHorarios.Click
+
+        Dim formulario As New frmHorarios()
+        formulario.ShowDialog()
+
+    End Sub
+
 End Class
+
+
