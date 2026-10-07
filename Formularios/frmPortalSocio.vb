@@ -236,16 +236,13 @@
     ' BOTÓN CAMBIAR CONTRASEÑA
     '========================================
     Private Sub btnCambiarContrasena_Click(
-        sender As Object,
-        e As EventArgs
-    ) Handles btnCambiarContrasena.Click
+    sender As Object,
+    e As EventArgs
+) Handles btnCambiarContrasena.Click
 
-        MessageBox.Show(
-            "Aquí se abrirá el formulario para cambiar la contraseña.",
-            "Cambiar contraseña",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Information
-        )
+        Dim formulario As New frmCambiarContrasena()
+
+        formulario.ShowDialog()
 
     End Sub
 

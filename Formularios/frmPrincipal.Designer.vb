@@ -405,7 +405,7 @@ Partial Class frmPrincipal
         ' 
         ' lblTitulo
         ' 
-        lblTitulo.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTitulo.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblTitulo.Location = New Point(3, 9)
         lblTitulo.Name = "lblTitulo"
         lblTitulo.Size = New Size(212, 35)
@@ -547,7 +547,7 @@ Partial Class frmPrincipal
         ' 
         ' frmPrincipal
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(935, 574)
         Controls.Add(sstSesion)

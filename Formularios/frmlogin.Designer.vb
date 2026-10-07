@@ -33,14 +33,6 @@ Partial Class frmlogin
         btnSalir = New Button()
         LblTitulo = New Label()
         lblSubtitulo = New Label()
-        btnUsuarios = New Button()
-        btnBitacora = New Button()
-        btnCambiarContrasena = New Button()
-        btnTiposMembresia = New Button()
-        btnActividades = New Button()
-        btnInstructores = New Button()
-        btnPrincipal = New Button()
-        btnSocios = New Button()
         SuspendLayout()
         ' 
         ' txtUsuario
@@ -50,7 +42,6 @@ Partial Class frmlogin
         txtUsuario.Size = New Size(100, 23)
         txtUsuario.TabIndex = 1
         txtUsuario.Text = "m"
-        txtUsuario.UseSystemPasswordChar = True
         ' 
         ' txtcontrasena
         ' 
@@ -61,7 +52,7 @@ Partial Class frmlogin
         ' 
         ' btnIngresar
         ' 
-        btnIngresar.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnIngresar.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnIngresar.Location = New Point(203, 340)
         btnIngresar.Name = "btnIngresar"
         btnIngresar.Size = New Size(75, 23)
@@ -113,13 +104,13 @@ Partial Class frmlogin
         ' 
         stsConexion.Location = New Point(0, 428)
         stsConexion.Name = "stsConexion"
-        stsConexion.Size = New Size(745, 22)
+        stsConexion.Size = New Size(577, 22)
         stsConexion.TabIndex = 8
         stsConexion.Text = "Servidor: localhost:3306 | BD: gimnasio_db"
         ' 
         ' btnSalir
         ' 
-        btnSalir.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnSalir.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnSalir.Location = New Point(293, 340)
         btnSalir.Name = "btnSalir"
         btnSalir.Size = New Size(75, 23)
@@ -130,7 +121,7 @@ Partial Class frmlogin
         ' LblTitulo
         ' 
         LblTitulo.AutoSize = True
-        LblTitulo.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        LblTitulo.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         LblTitulo.ForeColor = SystemColors.Highlight
         LblTitulo.Location = New Point(216, 19)
         LblTitulo.Name = "LblTitulo"
@@ -151,92 +142,12 @@ Partial Class frmlogin
         lblSubtitulo.Text = "Gimnasio Titan . Sistema de gestion"
         lblSubtitulo.TextAlign = ContentAlignment.TopCenter
         ' 
-        ' btnUsuarios
-        ' 
-        btnUsuarios.Location = New Point(510, 51)
-        btnUsuarios.Name = "btnUsuarios"
-        btnUsuarios.Size = New Size(101, 23)
-        btnUsuarios.TabIndex = 12
-        btnUsuarios.Text = "Probar Usuarios"
-        btnUsuarios.UseVisualStyleBackColor = True
-        ' 
-        ' btnBitacora
-        ' 
-        btnBitacora.Location = New Point(643, 12)
-        btnBitacora.Name = "btnBitacora"
-        btnBitacora.Size = New Size(102, 23)
-        btnBitacora.TabIndex = 13
-        btnBitacora.Text = "Probar Bitacoras"
-        btnBitacora.UseVisualStyleBackColor = True
-        ' 
-        ' btnCambiarContrasena
-        ' 
-        btnCambiarContrasena.Location = New Point(510, 12)
-        btnCambiarContrasena.Name = "btnCambiarContrasena"
-        btnCambiarContrasena.Size = New Size(127, 23)
-        btnCambiarContrasena.TabIndex = 14
-        btnCambiarContrasena.Text = "Cambiar Contrasena"
-        btnCambiarContrasena.UseVisualStyleBackColor = True
-        ' 
-        ' btnTiposMembresia
-        ' 
-        btnTiposMembresia.Location = New Point(630, 51)
-        btnTiposMembresia.Name = "btnTiposMembresia"
-        btnTiposMembresia.Size = New Size(103, 23)
-        btnTiposMembresia.TabIndex = 15
-        btnTiposMembresia.Text = "TiposMembresia"
-        btnTiposMembresia.UseVisualStyleBackColor = True
-        ' 
-        ' btnActividades
-        ' 
-        btnActividades.Location = New Point(529, 99)
-        btnActividades.Name = "btnActividades"
-        btnActividades.Size = New Size(82, 23)
-        btnActividades.TabIndex = 16
-        btnActividades.Text = "Actividades"
-        btnActividades.UseVisualStyleBackColor = True
-        ' 
-        ' btnInstructores
-        ' 
-        btnInstructores.Location = New Point(630, 99)
-        btnInstructores.Name = "btnInstructores"
-        btnInstructores.Size = New Size(92, 23)
-        btnInstructores.TabIndex = 17
-        btnInstructores.Text = "Instructores"
-        btnInstructores.UseVisualStyleBackColor = True
-        ' 
-        ' btnPrincipal
-        ' 
-        btnPrincipal.Location = New Point(529, 142)
-        btnPrincipal.Name = "btnPrincipal"
-        btnPrincipal.Size = New Size(75, 23)
-        btnPrincipal.TabIndex = 18
-        btnPrincipal.Text = "Principal"
-        btnPrincipal.UseVisualStyleBackColor = True
-        ' 
-        ' btnSocios
-        ' 
-        btnSocios.Location = New Point(630, 142)
-        btnSocios.Name = "btnSocios"
-        btnSocios.Size = New Size(75, 23)
-        btnSocios.TabIndex = 19
-        btnSocios.Text = "Socios"
-        btnSocios.UseVisualStyleBackColor = True
-        ' 
         ' frmLogin
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.Control
-        ClientSize = New Size(745, 450)
-        Controls.Add(btnSocios)
-        Controls.Add(btnPrincipal)
-        Controls.Add(btnInstructores)
-        Controls.Add(btnActividades)
-        Controls.Add(btnTiposMembresia)
-        Controls.Add(btnCambiarContrasena)
-        Controls.Add(btnBitacora)
-        Controls.Add(btnUsuarios)
+        ClientSize = New Size(577, 450)
         Controls.Add(lblSubtitulo)
         Controls.Add(LblTitulo)
         Controls.Add(btnSalir)
@@ -268,12 +179,4 @@ Partial Class frmlogin
     Friend WithEvents btnSalir As Button
     Friend WithEvents LblTitulo As Label
     Friend WithEvents lblSubtitulo As Label
-    Friend WithEvents btnUsuarios As Button
-    Friend WithEvents btnBitacora As Button
-    Friend WithEvents btnCambiarContrasena As Button
-    Friend WithEvents btnTiposMembresia As Button
-    Friend WithEvents btnActividades As Button
-    Friend WithEvents btnInstructores As Button
-    Friend WithEvents btnPrincipal As Button
-    Friend WithEvents btnSocios As Button
 End Class
