@@ -123,4 +123,16 @@
         Return valido
 
     End Function
+
+    Private Sub grpDatos_Enter(sender As Object, e As EventArgs) Handles grpDatos.Enter
+
+    End Sub
+    Private Sub btnVerMembresias_Click(
+    sender As Object,
+    e As EventArgs
+) Handles btnVerMembresias.Click
+
+        Dim formulario As New frmMembresiasPagos()
+        formulario.ShowDialog()
+    End Sub
 End Class

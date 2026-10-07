@@ -33,7 +33,6 @@ Partial Class frmlogin
         btnSalir = New Button()
         LblTitulo = New Label()
         lblSubtitulo = New Label()
-        btnCambiarContrasena = New Button()
         SuspendLayout()
         ' 
         ' txtUsuario
@@ -53,7 +52,7 @@ Partial Class frmlogin
         ' 
         ' btnIngresar
         ' 
-        btnIngresar.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnIngresar.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnIngresar.Location = New Point(203, 340)
         btnIngresar.Name = "btnIngresar"
         btnIngresar.Size = New Size(75, 23)
@@ -111,7 +110,7 @@ Partial Class frmlogin
         ' 
         ' btnSalir
         ' 
-        btnSalir.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnSalir.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnSalir.Location = New Point(293, 340)
         btnSalir.Name = "btnSalir"
         btnSalir.Size = New Size(75, 23)
@@ -122,7 +121,7 @@ Partial Class frmlogin
         ' LblTitulo
         ' 
         LblTitulo.AutoSize = True
-        LblTitulo.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        LblTitulo.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         LblTitulo.ForeColor = SystemColors.Highlight
         LblTitulo.Location = New Point(216, 19)
         LblTitulo.Name = "LblTitulo"
@@ -143,22 +142,12 @@ Partial Class frmlogin
         lblSubtitulo.Text = "Gimnasio Titan . Sistema de gestion"
         lblSubtitulo.TextAlign = ContentAlignment.TopCenter
         ' 
-        ' btnCambiarContrasena
-        ' 
-        btnCambiarContrasena.Location = New Point(441, 113)
-        btnCambiarContrasena.Name = "btnCambiarContrasena"
-        btnCambiarContrasena.Size = New Size(127, 23)
-        btnCambiarContrasena.TabIndex = 14
-        btnCambiarContrasena.Text = "Cambiar Contrasena"
-        btnCambiarContrasena.UseVisualStyleBackColor = True
-        ' 
         ' frmLogin
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.Control
         ClientSize = New Size(577, 450)
-        Controls.Add(btnCambiarContrasena)
         Controls.Add(lblSubtitulo)
         Controls.Add(LblTitulo)
         Controls.Add(btnSalir)
@@ -190,5 +179,4 @@ Partial Class frmlogin
     Friend WithEvents btnSalir As Button
     Friend WithEvents LblTitulo As Label
     Friend WithEvents lblSubtitulo As Label
-    Friend WithEvents btnCambiarContrasena As Button
 End Class

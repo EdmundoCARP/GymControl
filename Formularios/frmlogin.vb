@@ -199,7 +199,19 @@
             Sesion.IdInstructor =
                 usuario.IdInstructor
 
-            Dim formulario As New frmPrincipal()
+            Sesion.IdUsuario = usuario.IdUsuario
+            Sesion.NombreUsuario = usuario.NombreUsuario
+            Sesion.Rol = usuario.Rol
+            Sesion.IdSocio = usuario.IdSocio
+            Sesion.IdInstructor = usuario.IdInstructor
+
+            Dim formulario As Form
+
+            If usuario.Rol = "Socio" Then
+                formulario = New frmPortalSocio()
+            Else
+                formulario = New frmPrincipal()
+            End If
 
             Me.Hide()
             formulario.ShowDialog()
@@ -244,17 +256,6 @@
     ) Handles btnSalir.Click
 
         Application.Exit()
-
-    End Sub
-
-    Private Sub btnCambiarContrasena_Click(
-    sender As Object,
-    e As EventArgs
-) Handles btnCambiarContrasena.Click
-
-        Dim formulario As New frmCambiarContrasena()
-
-        formulario.ShowDialog()
 
     End Sub
 End Class

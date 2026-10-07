@@ -37,4 +37,25 @@
 
     End Sub
 
+    Private Sub btnRegistrarPago_Click(
+    sender As Object,
+    e As EventArgs
+) Handles btnRegistrarPago.Click
+
+        Dim formulario As New frmMembresiasPagos()
+        formulario.ShowDialog()
+
+    End Sub
+
+
+    Private Sub btnRenovarMembresia_Click(
+        sender As Object,
+        e As EventArgs
+    ) Handles btnRenovarMembresia.Click
+
+        Dim formulario As New frmMembresiasPagos()
+        formulario.ShowDialog()
+
+    End Sub
+
 End Class
