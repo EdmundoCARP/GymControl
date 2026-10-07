@@ -22,4 +22,19 @@
     Private Sub btnInstructores_Click(sender As Object, e As EventArgs) Handles btnInstructores.Click
 
     End Sub
+
+    Private Sub frmPrincipal_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub btnMembresiasPagos_Click(
+    sender As Object,
+    e As EventArgs
+) Handles btnMembresiasPagos.Click
+
+        Dim formulario As New frmMembresiasPagos()
+        formulario.ShowDialog()
+
+    End Sub
+
 End Class

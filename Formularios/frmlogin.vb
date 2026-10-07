@@ -199,6 +199,11 @@
             Sesion.IdInstructor =
                 usuario.IdInstructor
 
+            Dim formulario As New frmPrincipal()
+
+            Me.Hide()
+            formulario.ShowDialog()
+            Me.Show()
 
             MessageBox.Show(
                 "Bienvenido, " &
@@ -210,16 +215,6 @@
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
             )
-
-
-            ' Por ahora dejamos el login abierto.
-            ' Más adelante aquí conectaremos:
-            '
-            ' Administrador / Recepcionista / Instructor
-            '       -> frmPrincipal
-            '
-            ' Socio
-            '       -> frmPortalSocio
 
 
         Catch ex As Exception
@@ -251,26 +246,6 @@
         Application.Exit()
 
     End Sub
-    Private Sub btnUsuarios_Click(
-    sender As Object,
-    e As EventArgs
-) Handles btnUsuarios.Click
-
-        Dim formulario As New frmUsuarios()
-
-        formulario.ShowDialog()
-
-    End Sub
-    Private Sub btnBitacora_Click(
-    sender As Object,
-    e As EventArgs
-) Handles btnBitacora.Click
-
-        Dim formulario As New frmBitacoras()
-
-        formulario.ShowDialog()
-
-    End Sub
 
     Private Sub btnCambiarContrasena_Click(
     sender As Object,
@@ -282,46 +257,4 @@
         formulario.ShowDialog()
 
     End Sub
-
-    Private Sub btnTiposMembresia_Click(
-    sender As Object,
-    e As EventArgs
-) Handles btnTiposMembresia.Click
-
-        Dim formulario As New frmTiposMembresia()
-
-        formulario.ShowDialog()
-
-    End Sub
-    Private Sub btnActividades_Click(
-    sender As Object,
-    e As EventArgs
-) Handles btnActividades.Click
-
-        Dim formulario As New frmActividades()
-
-        formulario.ShowDialog()
-
-    End Sub
-    Private Sub btnPrincipal_Click(
-    sender As Object,
-    e As EventArgs
-) Handles btnPrincipal.Click
-
-        Dim formulario As New frmPrincipal()
-
-        formulario.ShowDialog()
-
-    End Sub
-    Private Sub btnSocios_Click(
-    sender As Object,
-    e As EventArgs
-) Handles btnSocios.Click
-
-        Dim formulario As New frmSocios()
-
-        formulario.ShowDialog()
-
-    End Sub
-
 End Class
