@@ -37,7 +37,7 @@ Partial Class frmPrincipal
         btnBitacoradeaccesos = New Button()
         btnUsuarioyroles = New Button()
         btnHorarios = New Button()
-        btnActvySalas = New Button()
+        btnActSalas = New Button()
         btnInstructores = New Button()
         btnPagos = New Button()
         btnMembresias = New Button()
@@ -59,10 +59,9 @@ Partial Class frmPrincipal
         lblResumen = New Label()
         lblTitulo = New Label()
         pnlSociosActivos = New Panel()
-        lbl = New Label()
+        lblEstemes = New Label()
         lblNum1 = New Label()
         lblSociosActivos = New Label()
-        dvgPorVencer = New DataGridView()
         dvgClasesHoy = New DataGridView()
         lblPorVencer = New Label()
         lblClasesHoy = New Label()
@@ -71,7 +70,8 @@ Partial Class frmPrincipal
         btnRegistrarPago = New Button()
         btnRenovarMembresia = New Button()
         btnVerHorarios = New Button()
-        sstSesion = New StatusStrip()
+        sstSesionn = New StatusStrip()
+        DataGridView1 = New DataGridView()
         mnuPrincipal.SuspendLayout()
         pnlNavegacion.SuspendLayout()
         pnlIndicadores.SuspendLayout()
@@ -79,8 +79,8 @@ Partial Class frmPrincipal
         pnlIngresosMes.SuspendLayout()
         pnlMembresiasVencer.SuspendLayout()
         pnlSociosActivos.SuspendLayout()
-        CType(dvgPorVencer, ComponentModel.ISupportInitialize).BeginInit()
         CType(dvgClasesHoy, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' mnuPrincipal
@@ -153,7 +153,7 @@ Partial Class frmPrincipal
         pnlNavegacion.Controls.Add(btnBitacoradeaccesos)
         pnlNavegacion.Controls.Add(btnUsuarioyroles)
         pnlNavegacion.Controls.Add(btnHorarios)
-        pnlNavegacion.Controls.Add(btnActvySalas)
+        pnlNavegacion.Controls.Add(btnActSalas)
         pnlNavegacion.Controls.Add(btnInstructores)
         pnlNavegacion.Controls.Add(btnPagos)
         pnlNavegacion.Controls.Add(btnMembresias)
@@ -201,14 +201,14 @@ Partial Class frmPrincipal
         btnHorarios.Text = "Horarios"
         btnHorarios.UseVisualStyleBackColor = True
         ' 
-        ' btnActvySalas
+        ' btnActSalas
         ' 
-        btnActvySalas.Location = New Point(17, 248)
-        btnActvySalas.Name = "btnActvySalas"
-        btnActvySalas.Size = New Size(115, 23)
-        btnActvySalas.TabIndex = 5
-        btnActvySalas.Text = "Actividades y salas"
-        btnActvySalas.UseVisualStyleBackColor = True
+        btnActSalas.Location = New Point(17, 248)
+        btnActSalas.Name = "btnActSalas"
+        btnActSalas.Size = New Size(115, 23)
+        btnActSalas.TabIndex = 5
+        btnActSalas.Text = "Actividades y salas"
+        btnActSalas.UseVisualStyleBackColor = True
         ' 
         ' btnInstructores
         ' 
@@ -416,7 +416,7 @@ Partial Class frmPrincipal
         ' 
         pnlSociosActivos.BackColor = Color.DodgerBlue
         pnlSociosActivos.BorderStyle = BorderStyle.FixedSingle
-        pnlSociosActivos.Controls.Add(lbl)
+        pnlSociosActivos.Controls.Add(lblEstemes)
         pnlSociosActivos.Controls.Add(lblNum1)
         pnlSociosActivos.Controls.Add(lblSociosActivos)
         pnlSociosActivos.Location = New Point(12, 81)
@@ -424,15 +424,15 @@ Partial Class frmPrincipal
         pnlSociosActivos.Size = New Size(115, 129)
         pnlSociosActivos.TabIndex = 0
         ' 
-        ' lbl
+        ' lblEstemes
         ' 
-        lbl.AutoSize = True
-        lbl.BackColor = Color.OrangeRed
-        lbl.Location = New Point(21, 95)
-        lbl.Name = "lbl"
-        lbl.Size = New Size(73, 15)
-        lbl.TabIndex = 3
-        lbl.Text = "+6 este mes "
+        lblEstemes.AutoSize = True
+        lblEstemes.BackColor = Color.OrangeRed
+        lblEstemes.Location = New Point(21, 95)
+        lblEstemes.Name = "lblEstemes"
+        lblEstemes.Size = New Size(73, 15)
+        lblEstemes.TabIndex = 3
+        lblEstemes.Text = "+6 este mes "
         ' 
         ' lblNum1
         ' 
@@ -453,14 +453,6 @@ Partial Class frmPrincipal
         lblSociosActivos.Size = New Size(83, 15)
         lblSociosActivos.TabIndex = 0
         lblSociosActivos.Text = "Socios Activos"
-        ' 
-        ' dvgPorVencer
-        ' 
-        dvgPorVencer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dvgPorVencer.Location = New Point(183, 302)
-        dvgPorVencer.Name = "dvgPorVencer"
-        dvgPorVencer.Size = New Size(365, 150)
-        dvgPorVencer.TabIndex = 3
         ' 
         ' dvgClasesHoy
         ' 
@@ -537,20 +529,32 @@ Partial Class frmPrincipal
         btnVerHorarios.Text = "Ver horarios"
         btnVerHorarios.UseVisualStyleBackColor = True
         ' 
-        ' sstSesion
+        ' sstSesionn
         ' 
-        sstSesion.Location = New Point(0, 552)
-        sstSesion.Name = "sstSesion"
-        sstSesion.Size = New Size(935, 22)
-        sstSesion.TabIndex = 12
-        sstSesion.Text = "StatusStrip1"
+        sstSesionn.Location = New Point(0, 552)
+        sstSesionn.Name = "sstSesionn"
+        sstSesionn.Size = New Size(935, 22)
+        sstSesionn.TabIndex = 12
+        sstSesionn.Text = "Sesion Iniciada"
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.AllowUserToAddRows = False
+        DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Location = New Point(195, 300)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
+        DataGridView1.Size = New Size(342, 150)
+        DataGridView1.TabIndex = 13
         ' 
         ' frmPrincipal
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(935, 574)
-        Controls.Add(sstSesion)
+        Controls.Add(DataGridView1)
+        Controls.Add(sstSesionn)
         Controls.Add(btnVerHorarios)
         Controls.Add(btnRenovarMembresia)
         Controls.Add(btnRegistrarPago)
@@ -559,7 +563,6 @@ Partial Class frmPrincipal
         Controls.Add(lblClasesHoy)
         Controls.Add(lblPorVencer)
         Controls.Add(dvgClasesHoy)
-        Controls.Add(dvgPorVencer)
         Controls.Add(pnlIndicadores)
         Controls.Add(pnlNavegacion)
         Controls.Add(mnuPrincipal)
@@ -579,8 +582,8 @@ Partial Class frmPrincipal
         pnlMembresiasVencer.PerformLayout()
         pnlSociosActivos.ResumeLayout(False)
         pnlSociosActivos.PerformLayout()
-        CType(dvgPorVencer, ComponentModel.ISupportInitialize).EndInit()
         CType(dvgClasesHoy, ComponentModel.ISupportInitialize).EndInit()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -591,7 +594,7 @@ Partial Class frmPrincipal
     Friend WithEvents btnBitacoradeaccesos As Button
     Friend WithEvents btnUsuarioyroles As Button
     Friend WithEvents btnHorarios As Button
-    Friend WithEvents btnActvySalas As Button
+    Friend WithEvents btnActSalas As Button
     Friend WithEvents btnInstructores As Button
     Friend WithEvents btnPagos As Button
     Friend WithEvents btnMembresias As Button
@@ -612,7 +615,7 @@ Partial Class frmPrincipal
     Friend WithEvents lblSociosActivos As Label
     Friend WithEvents lblTitulo As Label
     Friend WithEvents lblResumen As Label
-    Friend WithEvents lbl As Label
+    Friend WithEvents lblEstemes As Label
     Friend WithEvents pnlMembresiasVencer As Panel
     Friend WithEvents lblProxx As Label
     Friend WithEvents lblNum2 As Label
@@ -625,7 +628,6 @@ Partial Class frmPrincipal
     Friend WithEvents lblSalasUso As Label
     Friend WithEvents lblNum4 As Label
     Friend WithEvents lblclasesprog As Label
-    Friend WithEvents dvgPorVencer As DataGridView
     Friend WithEvents dvgClasesHoy As DataGridView
     Friend WithEvents lblPorVencer As Label
     Friend WithEvents lblClasesHoy As Label
@@ -634,5 +636,6 @@ Partial Class frmPrincipal
     Friend WithEvents btnRegistrarPago As Button
     Friend WithEvents btnRenovarMembresia As Button
     Friend WithEvents btnVerHorarios As Button
-    Friend WithEvents sstSesion As StatusStrip
+    Friend WithEvents sstSesionn As StatusStrip
+    Friend WithEvents DataGridView1 As DataGridView
 End Class
