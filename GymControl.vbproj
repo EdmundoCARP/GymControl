@@ -6,6 +6,8 @@
     <StartupObject>GymControl.My.MyApplication</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
+    <!-- Permite guardar secretos locales fuera del repositorio (dotnet user-secrets) -->
+    <UserSecretsId>GymControl-3de0a0e2-e7ac-43f5-8974-3f2a05fedf12</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,7 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.105.1" />
     <PackageReference Include="MySqlConnector" Version="2.6.2" />
+    <PackageReference Include="QuestPDF" Version="2026.9.1" />
+    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.33" />
   </ItemGroup>
 
   <ItemGroup>
